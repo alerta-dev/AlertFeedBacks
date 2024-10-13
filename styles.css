@@ -111,3 +111,6 @@ textarea {
 #capture-btn:hover {
     background-color: #2980b9;
 }
+.star.selected {
+    color: gold; /* Color para las estrellas seleccionadas */
+}
