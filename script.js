@@ -21,14 +21,6 @@ captureBtn.addEventListener('click', () => {
             console.error('Error al capturar la imagen:', error);
         });
 
-    // En este caso, la parte de reader.onload y document.fonts.ready no es necesaria
-});
-
- 
-    // Código para descargar la imagen
-  });
-});
-
 // Función para cargar una imagen de perfil personalizada
 const uploadImageInput = document.getElementById('upload-image');
 const profilePic = document.getElementById('profile-pic');
