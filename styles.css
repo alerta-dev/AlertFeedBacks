@@ -123,8 +123,8 @@ input#username:focus, textarea:focus {
     color: gold; /* Color para las estrellas seleccionadas */
 }
 .profile-image img {
-    width: 100px;  /* Asegúrate de que las dimensiones estén definidas */
-    height: 100px; /* Mantén las proporciones */
+    width: 200px;  /* Asegúrate de que las dimensiones estén definidas */
+    height: 200px; /* Mantén las proporciones */
     object-fit: cover;  /* Esto asegurará que la imagen no se deforme */
     border-radius: 50%; /* Para mantener la forma circular */
 }
