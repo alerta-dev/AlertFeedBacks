@@ -12,7 +12,7 @@ captureBtn.addEventListener('click', () => {
         link.click();  // Disparamos el evento para descargar
     });
 });
-document.fonts.ready.then(function () {
+ reader.onload = document.fonts.ready.then(function () {
   html2canvas(document.querySelector("#contenedor")).then(function (canvas) {
     // Código para descargar la imagen
   });
