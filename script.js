@@ -43,4 +43,16 @@ stars.forEach((star, index) => {
         }
     });
 });
+captureBtn.addEventListener('click', () => {
+    html2canvas(feedbackSection, {
+        scale: 2,  // Aumenta la escala para mejorar la resolución
+        useCORS: true,  // Para evitar problemas con imágenes externas
+        allowTaint: true  // Esto evitará que algunas imágenes generen problemas
+    }).then(canvas => {
+        const link = document.createElement('a');
+        link.href = canvas.toDataURL('image/png');
+        link.download = 'feedback.png';
+        link.click();
+    });
+});
 
