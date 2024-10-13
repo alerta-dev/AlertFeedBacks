@@ -67,7 +67,6 @@ body {
 }
 
 input#username, textarea {
-    overflow: hidden
     font-size: 30px;
     border: none;
     background: none;
