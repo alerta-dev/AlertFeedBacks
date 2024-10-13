@@ -8,10 +8,13 @@
 </head>
 <body>
     <div class="feedback-container" id="feedback-section">
-        <div class="profile-image">
-            <img id="profile-pic" src="assets/profile.png" alt="Imagen de Perfil">
+        <div class="left-section">
+            <div class="profile-image" id="profile-container">
+                <img id="profile-pic" src="assets/default-profile.png" alt="Imagen de Perfil">
+                <input type="file" id="upload-image" accept="image/*">
+            </div>
         </div>
-        <div class="user-info">
+        <div class="right-section">
             <h2 id="user-name">Nombre del Usuario</h2>
             <textarea id="feedback-text" placeholder="Escribe tu opinión..."></textarea>
         </div>
