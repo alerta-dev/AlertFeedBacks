@@ -8,6 +8,16 @@ document.getElementById('capture-btn').addEventListener('click', function() {
     });
 });
 
+// Función para cambiar la imagen de perfil al subir una nueva
+document.getElementById('upload-image').addEventListener('change', function(event) {
+    const reader = new FileReader();
+    reader.onload = function() {
+        const img = document.getElementById('profile-pic');
+        img.src = reader.result;
+    }
+    reader.readAsDataURL(event.target.files[0]);
+});
+
 // Función para puntuar con estrellas
 const stars = document.querySelectorAll('.star');
 stars.forEach(star => {
