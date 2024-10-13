@@ -1,85 +1,131 @@
-/* Estilos para el contenedor principal del feedback */
-.feedback-container {
-    padding: 50px; /* Mantén el padding amplio para evitar que el contenido se corte */
-    width: 900px; /* Ajusta según necesites */
-    max-width: 100%; /* Para que no se desborde en pantallas pequeñas */
-    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1); /* Sombra ligera para un efecto moderno */
-    border-radius: 20px; /* Bordes redondeados */
-    background-color: #f9f9f9; /* Fondo claro */
-    margin: auto;
-    position: relative;
-}
-
-/* Estilos para el nombre del usuario */
-.nombre-usuario {
-    font-size: 30px; /* Tamaño de texto más grande */
-    font-weight: bold;
-    margin-bottom: 20px;
-    line-height: 1.5; /* Espacio adecuado entre las líneas */
-    padding: 10px 0; /* Añade espacio alrededor del texto */
-    border: none; /* Elimina cualquier borde */
-    background-color: transparent; /* Fondo transparente para eliminar el cuadro */
-    outline: none; /* Sin borde al hacer clic */
-    width: 100%;
-    white-space: nowrap; /* Evita que el texto se corte si es largo */
-    overflow: hidden; /* Oculta el desbordamiento */
-    text-overflow: ellipsis; /* Añade "..." si el texto es muy largo */
-}
-
-/* Estilos para el cuadro de feedback */
-.feedback {
-    font-size: 16px;
-    padding: 10px 0;
-    border: none; /* Elimina el borde del cuadro */
-    background-color: transparent; /* Fondo transparente para un diseño moderno */
-    outline: none; /* Sin borde al hacer clic */
-    width: 100%; /* Ocupa el ancho completo */
-    height: auto;
-    resize: none; /* Evita que se pueda redimensionar manualmente */
-    line-height: 1.5;
-    overflow: visible;
-}
-
-/* Estilos para las estrellas de puntuación */
-.stars {
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff;
     display: flex;
-    gap: 5px;
-    font-size: 25px;
-    color: #ccc; /* Color inicial gris */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }
 
-.stars input {
-    display: none; /* Oculta los inputs */
+.feedback-container {
+    overflow: hidden
+    background-color: #f9f9f9;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 70px;
+    width: 900px;
+    display: flex;
+    flex-direction: row;
 }
 
-.stars label {
-    cursor: pointer;
-    transition: color 0.3s ease;
+.left-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Cambiar el color al hacer hover sobre las estrellas */
-.stars label:hover,
-.stars label:hover ~ label {
-    color: #f0c420; /* Cambia al color de las estrellas doradas */
+.right-section {
+    flex: 2;
+    padding-left: 10px;
 }
 
-/* Cambiar el color cuando una estrella está seleccionada */
-.stars input:checked ~ label {
-    color: #f0c420; /* Cambia el color de las estrellas seleccionadas */
-}
-
-/* Estilo para la imagen de perfil */
 .profile-image {
+    position: relative;
     width: 100px;
     height: 100px;
-    border-radius: 50%; /* Para hacer la imagen circular */
-    object-fit: cover; /* Asegura que la imagen se recorte correctamente */
-    background-color: #ddd; /* Fondo gris por defecto */
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
 
-/* Ajustes generales para evitar cortes */
-.feedback-container,
-.nombre-usuario,
-.feedback {
-    overflow: visible; /* Para evitar que el contenido se corte */
+.profile-image img {
+    width: 200%;
+    height: 200%;
+    object-fit: cover;
+}
+
+#upload-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.right-section h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+input#username, textarea {
+    font-size: 30px;
+    border: none;
+    background: none;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    padding: 15px;
+    border-radius: 20px; /* Opcional para bordes redondeados */
+    width: 100%;
+    outline: none;
+    transition: box-shadow 0.3s;
+}
+
+/* Aumentar la sombra al hacer clic en el campo */
+input#username:focus, textarea:focus {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+}
+
+.rating {
+    margin-top: 10px;
+}
+
+.stars {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.star {
+    font-size: 1.5rem;
+    color: #ccc;
+    cursor: pointer;
+    padding: 0 5px;
+    transition: color 0.2s;
+}
+
+.star.selected {
+    color: #FFD700;
+}
+
+#capture-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #3498db;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+#capture-btn:hover {
+    background-color: #2980b9;
+}
+.star.selected {
+    color: gold; /* Color para las estrellas seleccionadas */
+}
+.profile-image img {
+    width: 200px;  /* Asegúrate de que las dimensiones estén definidas */
+    height: 200px; /* Mantén las proporciones */
+    object-fit: cover;  /* Esto asegurará que la imagen no se deforme */
+    border-radius: 50%; /* Para mantener la forma circular */
 }
