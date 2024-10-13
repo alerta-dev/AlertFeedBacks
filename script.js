@@ -10,10 +10,11 @@ captureBtn.addEventListener('click', () => {
         link.href = canvas.toDataURL('image/png');
         link.download = 'feedback.png';  // Nombre del archivo
         link.click();  // Disparamos el evento para descargar
+        reader.onload = document.fonts.ready.then(function () {
+  html2canvas(document.querySelector("#contenedor")).then(function (canvas) {
     });
 });
- reader.onload = document.fonts.ready.then(function () {
-  html2canvas(document.querySelector("#contenedor")).then(function (canvas) {
+ 
     // Código para descargar la imagen
   });
 });
