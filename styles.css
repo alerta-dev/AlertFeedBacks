@@ -71,7 +71,7 @@ input#username, textarea {
     border: none;
     background: none;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Sombra ligera */
-    padding: 10px;
+    padding: 30px;
     border-radius: 10px; /* Opcional para bordes redondeados */
     width: 100%;
     outline: none;
