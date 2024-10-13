@@ -30,9 +30,7 @@ uploadImageInput.addEventListener('change', function (event) {
     const file = event.target.files[0];
     const reader = new FileReader();
 
-    reader.onload = function () {
-        profilePic.src = reader.result;
-    };
+    //reader.onload
 
     if (file) {
         reader.readAsDataURL(file);
