@@ -51,7 +51,3 @@ stars.forEach((star, index) => {
         }
     });
 });
-
-    // Aquí manejas el canvas
-});
-
