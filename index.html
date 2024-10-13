@@ -3,37 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feedback de Usuarios</title>
+    <title>Feedback</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </head>
 <body>
     <div class="feedback-container" id="feedback-section">
         <div class="left-section">
-            <div class="profile-image" id="profile-container">
-                <img id="profile-pic" src="assets/default-profile.png" alt="Imagen de Perfil">
+            <div class="profile-image">
+                <img id="profile-pic" src="https://via.placeholder.com/150" alt="Imagen de perfil">
                 <input type="file" id="upload-image" accept="image/*">
             </div>
         </div>
         <div class="right-section">
-            <h2 id="user-name">Nombre del Usuario</h2>
-            <textarea id="feedback-text" placeholder="Escribe tu opinión..."></textarea>
-        </div>
-        <div class="rating">
-            <span>Puntuación:</span>
-            <div class="stars">
-                <span class="star" data-value="1">★</span>
-                <span class="star" data-value="2">★</span>
-                <span class="star" data-value="3">★</span>
-                <span class="star" data-value="4">★</span>
-                <span class="star" data-value="5">★</span>
-                <span class="star" data-value="6">★</span>
-                <span class="star" data-value="7">★</span>
-                <span class="star" data-value="8">★</span>
-                <span class="star" data-value="9">★</span>
-                <span class="star" data-value="10">★</span>
+            <h2>Nombre del Usuario</h2>
+            <textarea placeholder="Escribe tu opinión..."></textarea>
+            <div class="rating">
+                <label for="rating">Puntuación:</label>
+                <div class="stars">
+                    <!-- Se generarán dinámicamente las estrellas -->
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                </div>
             </div>
         </div>
     </div>
+
     <button id="capture-btn">Sacar captura</button>
 
     <script src="script.js"></script>
