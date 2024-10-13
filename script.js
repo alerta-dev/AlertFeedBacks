@@ -42,7 +42,7 @@ uploadImageInput.addEventListener('change', function (event) {
     
 // Interactividad para las estrellas
     
-const stars = document.querySelectorAll('.star');
+const stars = document.querySelectorAll('star');
 
 stars.forEach((star, index) => {
     star.addEventListener('click', () => {
