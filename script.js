@@ -2,7 +2,6 @@
 const captureBtn = document.getElementById('capture-btn');
 const feedbackSection = document.getElementById('feedback-section');
 
-// Función para capturar la sección de feedback
 // Asegúrate de importar html-to-image si lo necesitas
 // import { toPng } from 'html-to-image';
 
@@ -10,6 +9,7 @@ captureBtn.addEventListener('click', () => {
     const feedbackSection = document.getElementById('feedback-section'); // Asegúrate de que este sea el id correcto
 
     // Usar html-to-image para capturar la imagen
+    
     htmlToImage.toPng(feedbackSection, { quality: 1 }) // Puedes ajustar la calidad si es necesario
         .then(function (dataUrl) {
             const link = document.createElement('a');
@@ -22,6 +22,7 @@ captureBtn.addEventListener('click', () => {
         });
 
 // Función para cargar una imagen de perfil personalizada
+    
 const uploadImageInput = document.getElementById('upload-image');
 const profilePic = document.getElementById('profile-pic');
 
@@ -37,7 +38,9 @@ uploadImageInput.addEventListener('change', function (event) {
         reader.readAsDataURL(file);
     }
 });
+    
 // Interactividad para las estrellas
+    
 const stars = document.querySelectorAll('.star');
 
 stars.forEach((star, index) => {
