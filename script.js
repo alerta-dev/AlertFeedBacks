@@ -3,17 +3,27 @@ const captureBtn = document.getElementById('capture-btn');
 const feedbackSection = document.getElementById('feedback-section');
 
 // Función para capturar la sección de feedback
+// Asegúrate de importar html-to-image si lo necesitas
+// import { toPng } from 'html-to-image';
+
 captureBtn.addEventListener('click', () => {
-    html2canvas(feedbackSection, { scale: 10 }).then(canvas => {
-        // Convertimos el canvas a una imagen
-        const link = document.createElement('a');
-        link.href = canvas.toDataURL('image/png');
-        link.download = 'feedback.png';  // Nombre del archivo
-        link.click();  // Disparamos el evento para descargar
-        reader.onload = document.fonts.ready.then(function () {
-  html2canvas(document.querySelector("#contenedor")).then(function (canvas) {
-    });
+    const feedbackSection = document.getElementById('feedback-container'); // Asegúrate de que este sea el id correcto
+
+    // Usar html-to-image para capturar la imagen
+    htmlToImage.toPng(feedbackSection, { quality: 1 }) // Puedes ajustar la calidad si es necesario
+        .then(function (dataUrl) {
+            const link = document.createElement('a');
+            link.href = dataUrl;
+            link.download = 'feedback.png'; // Nombre del archivo
+            link.click(); // Disparamos el evento para descargar
+        })
+        .catch(function (error) {
+            console.error('Error al capturar la imagen:', error);
+        });
+
+    // En este caso, la parte de reader.onload y document.fonts.ready no es necesaria
 });
+
  
     // Código para descargar la imagen
   });
