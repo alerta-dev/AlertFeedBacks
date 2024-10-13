@@ -4,7 +4,7 @@ const feedbackSection = document.getElementById('feedback-section');
 
 // Función para capturar la sección de feedback
 captureBtn.addEventListener('click', () => {
-    html2canvas(feedbackSection, { scale: 2 }).then(canvas => {
+    html2canvas(feedbackSection, { scale: 5 }).then(canvas => {
         // Convertimos el canvas a una imagen
         const link = document.createElement('a');
         link.href = canvas.toDataURL('image/png');
