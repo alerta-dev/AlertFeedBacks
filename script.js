@@ -29,9 +29,9 @@ const profilePic = document.getElementById('profile-pic');
 uploadImageInput.addEventListener('change', function (event) {
     const file = event.target.files[0];
     const reader = new FileReader();
-
-    //reader.onload
-
+    reader.onload = function () {
+    profilePic.src = reader.result;
+    };
     if (file) {
         reader.readAsDataURL(file);
     }
