@@ -55,7 +55,6 @@ captureBtn.addEventListener('click', () => {
         link.click();
     });
 });
-html2canvas(document.querySelector(".feedback-container"), { useCORS: true }).then(canvas => {
     // Aquí manejas el canvas
 });
 
