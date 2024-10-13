@@ -40,15 +40,16 @@ uploadImageInput.addEventListener('change', function (event) {
     }
 
     
-// Interactividad para las estrellas
-    
-const stars = document.querySelectorAll('stars');
-
+// Interactividad para las estrellas   
 stars.forEach((star, index) => {
     star.addEventListener('click', () => {
     stars.forEach(s => s.classList.remove('selected'));
         for (let i = 0; i <= index; i++) {
             stars[i].classList.add('selected');
         }
+        
+const stars = document.querySelectorAll('.star');
+
+
     });
 });
