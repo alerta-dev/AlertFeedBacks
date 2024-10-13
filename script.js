@@ -60,7 +60,6 @@ stars.forEach((star, index) => {
     });
 });
 
-html2canvas(document.querySelector(".feedback-container"), { useCORS: true }).then(canvas => {
     // Aquí manejas el canvas
 });
 
