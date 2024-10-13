@@ -7,7 +7,7 @@ const feedbackSection = document.getElementById('feedback-section');
 // import { toPng } from 'html-to-image';
 
 captureBtn.addEventListener('click', () => {
-    const feedbackSection = document.getElementById('feedback-section'); // Asegúrate de que este sea el id correcto
+    const feedbackSection = document.getElementById('capture-btn'); // Asegúrate de que este sea el id correcto
 
     // Usar html-to-image para capturar la imagen
     htmlToImage.toPng(feedbackSection, { quality: 1 }) // Puedes ajustar la calidad si es necesario
