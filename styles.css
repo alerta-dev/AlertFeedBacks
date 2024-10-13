@@ -68,7 +68,7 @@ body {
 
 input#username, textarea {
     overflow: hidden
-    font-size: 24px;
+    font-size: 30px;
     border: none;
     background: none;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Sombra ligera */
