@@ -42,10 +42,7 @@ const stars = document.querySelectorAll('.star');
 
 stars.forEach((star, index) => {
     star.addEventListener('click', () => {
-        // Remover la clase 'selected' de todas las estrellas
-        stars.forEach(s => s.classList.remove('selected'));
-        
-        // Agregar la clase 'selected' a las estrellas hasta la que fue clickeada
+    stars.forEach(s => s.classList.remove('selected'));
         for (let i = 0; i <= index; i++) {
             stars[i].classList.add('selected');
         }
