@@ -29,3 +29,18 @@ uploadImageInput.addEventListener('change', function (event) {
         reader.readAsDataURL(file);
     }
 });
+// Interactividad para las estrellas
+const stars = document.querySelectorAll('.star');
+
+stars.forEach((star, index) => {
+    star.addEventListener('click', () => {
+        // Remover la clase 'selected' de todas las estrellas
+        stars.forEach(s => s.classList.remove('selected'));
+        
+        // Agregar la clase 'selected' a las estrellas hasta la que fue clickeada
+        for (let i = 0; i <= index; i++) {
+            stars[i].classList.add('selected');
+        }
+    });
+});
+
