@@ -5,23 +5,19 @@ document.addEventListener('DOMContentLoaded', () => {
    const profilePic = document.getElementById('profile-pic');
   const stars = document.querySelectorAll('.star');
 
-  // Función para capturar la sección de feedback
   captureBtn.addEventListener('click', () => {
-    if (feedbackSection) {
-      htmlToImage.toPng(feedbackSection)
-        .then((dataUrl) => {
-          const link = document.createElement('a');
-          link.href = dataUrl;
-          link.download = 'feedback.png'; // Nombre del archivo
-          link.click(); // Dispara el evento para descargar
-        })
-        .catch((error) => {
-          console.error('Error al capturar la imagen:', error);
-        });
-    } else {
-      console.error('Feedback section no encontrada.');
-    }
-  });
+  domtoimage.toPng(feedbackSection)
+    .then((dataUrl) => {
+      const link = document.createElement('a');
+      link.href = dataUrl;
+      link.download = 'feedback.png'; // Nombre del archivo
+      link.click(); // Dispara el evento para descargar
+    })
+    .catch((error) => {
+      console.error('Error al capturar la imagen:', error);
+    });
+});
+
 
   // Función para gestionar las estrellas
   if (stars.length > 0) {
