@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   //capturar foto 
   captureBtn.addEventListener('click', () => {
-  domtoimage.toPng(feedback-section)
+  domtoimage.toPng(feedback-container)
     .then((dataUrl) => {
       const link = document.createElement('a');
       link.href = dataUrl;
