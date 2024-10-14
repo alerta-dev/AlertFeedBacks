@@ -7,8 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   //capturar foto 
   captureBtn.addEventListener('click', () => {
-  console.log(feedbackSection);
-  domtoimage.toPng(feedbackSection)
+     console.log(feedbackSection);
+     domtoimage.toPng(feedbackSection)
     .then((dataUrl) => {
       const link = document.createElement('a');
       link.href = dataUrl;
@@ -36,6 +36,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Función para subir imágenes
+  reader.onload = () => {
+  profilePic.src = reader.result;  // Cambia la fuente de la imagen existente
+};
+//funcion de subir imagenes 2
   if (uploadInput) {
     uploadInput.addEventListener('change', (event) => {
       const file = event.target.files[0]; // Obtiene el primer archivo
