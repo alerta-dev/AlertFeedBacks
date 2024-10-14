@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const feedbackSection = document.getElementById('feedback-section');
   const captureBtn = document.getElementById('capture-btn');
   const uploadInput = document.getElementById('profile-image'); // Asegúrate de que este ID esté en tu HTML
+   const profilePic = document.getElementById('profile-pic');
   const stars = document.querySelectorAll('.star');
 
   // Función para capturar la sección de feedback
