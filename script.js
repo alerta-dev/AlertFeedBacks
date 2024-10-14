@@ -1,33 +1,33 @@
 document.addEventListener('DOMContentLoaded', () => {
   const feedbackSection = document.getElementById('feedback-section');
   const captureBtn = document.getElementById('capture-btn');
-  const uploadInput = document.getElementById('upload-image'); // Asegúrate de que este ID esté en tu HTML
-   const profilePic = document.getElementById('profile-pic');
-  const stars = document.querySelectorAll('.star');
+  const uploadInput = document.getElementById('upload-image'); // Input para subir imágenes
+  const profilePic = document.getElementById('profile-pic'); // Imagen de perfil
+  const stars = document.querySelectorAll('.star'); // Estrellas de puntuación
 
-  //capturar foto 
+  // Función para capturar la sección de feedback
   captureBtn.addEventListener('click', () => {
-     console.log(feedbackSection);
-     domtoimage.toPng(feedbackSection)
-    .then((dataUrl) => {
-      const link = document.createElement('a');
-      link.href = dataUrl;
-      link.download = 'feedback.png'; // Nombre del archivo
-      link.click(); // Dispara el evento para descargar
-    })
-    .catch((error) => {
-      console.error('Error al capturar la imagen:', error);
-    });
-});
+    setTimeout(() => {
+      domtoimage.toPng(feedbackSection)
+        .then((dataUrl) => {
+          const link = document.createElement('a');
+          link.href = dataUrl;
+          link.download = 'feedback.png'; // Nombre del archivo descargado
+          link.click(); // Activa la descarga
+        })
+        .catch((error) => {
+          console.error('Error al capturar la imagen:', error);
+        });
+    }, 500); // Retraso para asegurar que todo se ha renderizado correctamente
+  });
 
-
-  // Función para gestionar las estrellas
+  // Función para gestionar la puntuación con estrellas
   if (stars.length > 0) {
     stars.forEach((star, index) => {
       star.addEventListener('click', () => {
-        stars.forEach(s => s.classList.remove('selected'));
+        stars.forEach(s => s.classList.remove('selected')); // Remueve la clase seleccionada de todas las estrellas
         for (let i = 0; i <= index; i++) {
-          stars[i].classList.add('selected');
+          stars[i].classList.add('selected'); // Marca las estrellas hasta la seleccionada
         }
       });
     });
@@ -35,25 +35,16 @@ document.addEventListener('DOMContentLoaded', () => {
     console.error('No se encontraron estrellas.');
   }
 
-  // Función para subir imágenes
-  reader.onload = () => {
-  profilePic.src = reader.result;  // Cambia la fuente de la imagen existente
-};
-//funcion de subir imagenes 2
+  // Función para subir imágenes y colocarlas en el círculo de perfil
   if (uploadInput) {
     uploadInput.addEventListener('change', (event) => {
-      const file = event.target.files[0]; // Obtiene el primer archivo
+      const file = event.target.files[0]; // Obtiene el archivo subido
       const reader = new FileReader();
 
-      // Asegúrate de que haya un archivo seleccionado
       if (file) {
-        reader.readAsDataURL(file); // Lee el archivo como URL de datos
+        reader.readAsDataURL(file); // Lee el archivo como una URL de datos
         reader.onload = () => {
-          const img = document.createElement('img');
-          img.src = reader.result; // Asigna la URL de datos como fuente
-          img.alt = 'Imagen subida';
-          img.style.maxWidth = '100%'; // Ajusta el tamaño según sea necesario
-          feedbackSection.appendChild(img); // Agrega la imagen al feedback section
+          profilePic.src = reader.result; // Asigna la imagen subida al elemento de imagen de perfil
         };
       } else {
         console.error('No se seleccionó ningún archivo.');
