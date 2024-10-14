@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const stars = document.querySelectorAll('.star');
 
   //capturar foto 
+  console.log(feedbackSection);
   captureBtn.addEventListener('click', () => {
   domtoimage.toPng(feedback-container)
     .then((dataUrl) => {
