@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
    const profilePic = document.getElementById('profile-pic');
   const stars = document.querySelectorAll('.star');
 
+  //capturar foto 
   captureBtn.addEventListener('click', () => {
   domtoimage.toPng(feedbackSection)
     .then((dataUrl) => {
