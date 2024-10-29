@@ -3,5 +3,5 @@
 - Flexible para poder editar a tu gusto.
 - Tecnologia adaptable en proyectos
 - Capturas rapidas y de buena calidad.
-### [Discord](https://discord.com/invite/Y2VUgTE) - [Youtube](https://www.youtube.com/@loquendoalert9590) -
+### [Discord](https://discord.com/invite/Y2VUgTE) - [Youtube](https://www.youtube.com/@loquendoalert9590) - [Facebook](https://www.facebook.com/groups/loquendoalert)
 ![](feedback_20.png)
